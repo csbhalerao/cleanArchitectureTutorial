@@ -1,11 +1,15 @@
 package com.example.coroutinetutorial
 
+import android.util.Log
 import androidx.databinding.ObservableField
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.onCompletion
+import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 
 class MainViewModel : ViewModel() {
@@ -22,7 +26,13 @@ class MainViewModel : ViewModel() {
 
     fun timer() {
         GlobalScope.launch(Dispatchers.Main) {
-            timerFlow.collect {
+            timerFlow.onStart {
+                Log.i("timer", "timer start")
+            }.onCompletion {
+                Log.i("timer", "timer complete")
+            }.onEach {
+                Log.i("timer", "timer $it")
+            }.collect {
                 timerValue.set(it.toString())
             }
         }
