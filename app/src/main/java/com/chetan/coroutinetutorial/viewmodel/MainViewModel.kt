@@ -1,4 +1,4 @@
-package com.example.coroutinetutorial
+package com.chetan.coroutinetutorial.viewmodel
 
 import androidx.databinding.ObservableField
 import androidx.lifecycle.ViewModel

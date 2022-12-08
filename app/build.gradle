@@ -2,14 +2,15 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
-    namespace 'com.example.coroutinetutorial'
+    namespace 'com.chetan.coroutinetutorial'
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.example.coroutinetutorial"
+        applicationId "com.chetan.coroutinetutorial"
         minSdk 29
         targetSdk 32
         versionCode 1
@@ -42,7 +43,7 @@ dependencies {
     def lifecycleVersion = '2.5.1'
     def retrofitVersion = "2.9.0"
     def daggerHiltVersion = '2.44'
-    def coilVersion = '2.2.2'
+    //def coilVersion = '2.2.2'
     def materialDesignVersion = "1.7.0"
 
     implementation 'androidx.core:core-ktx:1.7.0'
@@ -78,7 +79,9 @@ dependencies {
     implementation "com.google.android.material:material:$materialDesignVersion"
 
     //for image rendering
-    implementation "io.coil-kt:coil:$coilVersion"
+   // implementation "io.coil-kt:coil:$coilVersion"
+    implementation 'com.github.bumptech.glide:glide:4.14.2'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.14.2'
 
     //Hilt for di
     implementation "com.google.dagger:hilt-android:$daggerHiltVersion"

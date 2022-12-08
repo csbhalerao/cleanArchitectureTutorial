@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="book"
+            type="com.chetan.coroutinetutorial.usecase.model.Book"></variable>
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="@dimen/padding_book_item">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivBook"
+            app:source="@{book.image}"
+            android:background="@color/cardview_dark_background"
+            android:layout_width="@dimen/width_book_image"
+            android:layout_height="@dimen/height_book_image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tvTitle"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvTitle"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:gravity="left"
+            android:layout_marginLeft="@dimen/padding_book_text"
+            android:text="@{book.name}"
+            app:layout_constraintVertical_chainStyle="spread"
+            android:fontFamily="sans-serif-medium"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivBook"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvDescription"
+            android:maxLines="3"
+            android:ellipsize="end"
+            android:gravity="left"
+            android:fontFamily="sans-serif-light"
+            android:textSize="14sp"
+            android:layout_marginLeft="@dimen/padding_book_text"
+            app:layout_constraintVertical_chainStyle="spread"
+            android:text="@{book.description}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle"
+            app:layout_constraintStart_toEndOf="@+id/ivBook"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

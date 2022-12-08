@@ -6,23 +6,36 @@
     <data>
 
         <variable
-            name="mainViewModel"
-            type="com.example.coroutinetutorial.MainViewModel"></variable>
+            name="searchViewModel"
+            type="com.chetan.coroutinetutorial.viewmodel.SearchBooksViewModel"></variable>
+
+        <import type="android.view.View" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
-        <TextView
-            android:id="@+id/timerText"
+        android:background="@color/white"
+        tools:context=".ui.MainActivity">
+
+        <ProgressBar
+            android:id="@+id/loading_spinner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{mainViewModel.timerValue}"
+            android:layout_gravity="center"
+            android:indeterminateTint="@color/black"
+            android:indeterminateTintMode="src_atop"
+            android:visibility="@{searchViewModel.isLoading() ? View.VISIBLE :View.GONE, default=visible}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/recyclerViewBook"
+            android:visibility="@{searchViewModel.isSuccessful() ? View.VISIBLE :View.GONE, default=visible}" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

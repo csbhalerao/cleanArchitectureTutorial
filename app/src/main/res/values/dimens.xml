@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding_book_item">16dp</dimen>
+    <dimen name="width_book_image">80dp</dimen>
+    <dimen name="height_book_image">100dp</dimen>
+    <dimen name="padding_book_text">16dp</dimen>
+</resources>

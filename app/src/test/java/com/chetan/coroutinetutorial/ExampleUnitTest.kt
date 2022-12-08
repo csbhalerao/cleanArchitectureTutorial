@@ -1,4 +1,4 @@
-package com.example.coroutinetutorial
+package com.chetan.coroutinetutorial
 
 import org.junit.Assert.*
 import org.junit.Test
