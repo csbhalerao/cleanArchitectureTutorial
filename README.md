@@ -1,19 +1,19 @@
 # cleanArchitectureTutorial
 This tutorial is to implement clean architecture in android.
 
-- In `book_search_app` branch you can implementation with MVVM pattern
+- In `book_search_app` branch you can get implementation of MVVM pattern
 - Dagger hilt is used for dependency injection with retrofit is singleton scope while other objects have respective scope
 
 - In this app we are following the clean architecture(onion architecture) 
-- Used clean architecture with package data, ui, usecase, viewmodel, di
-- Data deals with the network call using retrofit through repositories. (Can be used for fetching data from local database or any other way)
-- Mapper will convert the network API response to domain model which is inside usecase.
+- Used clean architecture with packages - data, ui, usecase, viewmodel, di
+- Data deals with the network call using retrofit through repositories. (Can be used for fetching data from local database or from any other source)
+- Mapper will convert the network API response to domain model which is inside usecase package.
 
-- LiveData is widely used for observing the changes in data and emitting the events when there is changes
+- LiveData is used for observing the changes in data and emitting the events when there is changes
 
 - Databinding is used for populating the data in layouts and reclyclerview items
 - Glide is used for managing the images, deals with caching
-- Constraintlayout is used for keeping the layout light weight(keep layout nesting minimal)
+- Constraintlayout is used for keeping the layout light weight(to keep layout nesting at minimal level)
 - appcompat widgets are used in layouts
 - ktlint for keeping the check on lint warnings
 
