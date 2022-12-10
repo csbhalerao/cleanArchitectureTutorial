@@ -28,18 +28,7 @@ class MainActivity : AppCompatActivity() {
         binding.lifecycleOwner = this
         binding.searchViewModel = searchViewModel
         setRecyclerView()
-        observeResponse()
         searchViewModel.searchBook("kotlin")
-    }
-
-    private fun observeResponse() {
-        searchViewModel.booksLiveData.observe(this, {
-            println("in obs:" + it)
-            it?.let {
-                println("in let:" + it)
-                booksAdapter.notifyDataSetChanged()
-            }
-        })
     }
 
     private fun setRecyclerView() {

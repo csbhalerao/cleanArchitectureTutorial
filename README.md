@@ -9,6 +9,8 @@ This tutorial is to implement clean architecture in android.
 - Data deals with the network call using retrofit through repositories. (Can be used for fetching data from local database or from any other source)
 - Mapper will convert the network API response to domain model which is inside usecase package.
 
+- For caching okhttp interceptor is implemented with caching logic. 
+
 - LiveData is used for observing the changes in data and emitting the events when there is changes
 
 - Databinding is used for populating the data in layouts and reclyclerview items

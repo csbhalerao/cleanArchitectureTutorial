@@ -43,9 +43,6 @@ class SearchBooksViewModel @Inject constructor(
                 Resource.Status.ERROR -> {
                     setError(response.resourceError)
                 }
-                else -> {
-                    Log.i(this.javaClass.kotlin.simpleName, "processResponse: invalid status")
-                }
             }
         } ?: showCustomError()
     }
@@ -69,7 +66,6 @@ class SearchBooksViewModel @Inject constructor(
         isLoadingLiveData.value = false
         isErrorLiveData.value = false
         isSuccessLiveData.value = true
-        println("books:" + booksLiveData.value)
     }
 
     private fun setLoading() {
